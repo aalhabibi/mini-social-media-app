@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>User Comments</title>
+    <style>
+      /* User Comments Page Styles */
+      body {
+        font-family: Arial, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        /* height: 60vh; */
+        margin: 0;
+        background-color: #f0f0f0;
+      }
+      main {
+        padding-top: 10vh;
+      }
+      .comments-container {
+        width: 40vw;
+        margin: 0 auto;
+        padding: 20px;
+        background: white;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+
+      .comments-container h2 {
+        font-size: 24px;
+        font-weight: 700;
+        margin-bottom: 20px;
+      }
+
+      .comments-list {
+        list-style-type: none;
+        padding: 0;
+      }
+
+      .comment-item {
+        margin-bottom: 20px;
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        background: #f9f9f9;
+      }
+
+      .comment-item h3 {
+        margin: 0;
+        font-size: 20px;
+      }
+
+      .comment-item a {
+        text-decoration: none;
+        color: #007bff;
+      }
+
+      .comment-item a:hover {
+        text-decoration: underline;
+      }
+
+      .comment-text {
+        font-size: 16px;
+        color: #333;
+        margin-top: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <%- include('../partials/header') %>
+    <main>
+      <div class="comments-container">
+        <h2>Comments by <%=user.username %></h2>
+        <% if (comments.length > 0) { %>
+        <ul class="comments-list">
+          <% comments.forEach(function(comment) { %>
+          <li class="comment-item">
+            <p class="comment-text"><%= comment.dataValues.content %></p>
+            <a href="/post/<%= comment.dataValues.postID %>">View Post</a>
+          </li>
+          <% }); %>
+        </ul>
+        <% } else { %>
+        <p>No comments made yet.</p>
+        <% } %>
+      </div>
+    </main>
+  </body>
+</html>

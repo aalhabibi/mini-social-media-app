@@ -1,0 +1,82 @@
+<%- include("../partials/header.ejs") %>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>All Profiles</title>
+    <!-- <link rel="stylesheet" href="/allProfiles.css" /> -->
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        /* height: 60vh; */
+        margin: 0;
+        background-color: #f0f0f0;
+      }
+      /* main {
+        /* padding-top: 10vh; */
+      /* } */
+      .profiles-container {
+        /* width: 30%; */
+        width: 40vw;
+        /* height: auto; */
+        margin: 100px auto;
+        background-color: #fff;
+        padding: 20px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+      }
+
+      .profiles-header {
+        text-align: center;
+        margin-bottom: 20px;
+      }
+
+      .profiles-header h1 {
+        margin: 0;
+        color: #333;
+      }
+
+      .profiles-list ul {
+        list-style-type: none;
+        padding: 0;
+        font-size: larger;
+      }
+
+      .profiles-list li {
+        margin: 10px 0;
+      }
+
+      .profiles-list a {
+        text-decoration: none;
+        color: #007bff;
+        transition: color 0.3s;
+      }
+
+      .profiles-list a:hover {
+        color: #0056b3;
+      }
+    </style>
+  </head>
+  <body>
+    <%- include("../partials/header.ejs") %>
+    <main>
+      <div class="profiles-container">
+        <div class="profiles-header">
+          <h1>All Profiles</h1>
+        </div>
+        <div class="profiles-list">
+          <ul>
+            <% usernames.forEach(function(username) { %>
+            <li>
+              <a href="/user/<%= username %>/profile/"><%= username %></a>
+            </li>
+            <% }); %>
+          </ul>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>

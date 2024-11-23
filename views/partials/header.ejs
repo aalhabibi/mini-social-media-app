@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Mini Social App</title>
+    <!-- <link rel="stylesheet" href="/stylesheets/style.css" /> -->
+    <style>
+      /* Header styles */
+      .main-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #007bff;
+        padding: 10px 20px;
+        color: white;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        position: fixed;
+        width: 100%;
+        top: 0;
+        left: 0;
+        z-index: 1000;
+      }
+
+      .logo h1 {
+        margin: 0;
+        font-size: 24px;
+        font-weight: 700; /* Bold */
+      }
+
+      .main-nav ul {
+        list-style-type: none;
+        margin-right: 30px;
+        padding: 0;
+        display: flex;
+      }
+
+      .main-nav li {
+        margin: 0px;
+      }
+
+      .main-nav a {
+        text-decoration: none;
+        color: white;
+        padding: 8px 16px;
+        border-radius: 4px;
+        transition: background-color 0.3s;
+        font-weight: 500; /* Medium */
+      }
+
+      .main-nav a:hover {
+        background-color: #0056b3;
+      }
+    </style>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <header class="main-header">
+      <div class="logo">
+        <h1>Mini Social App</h1>
+      </div>
+      <nav class="main-nav">
+        <ul>
+          <li><a href="/post/new">New Post</a></li>
+          <li><a href="/profiles">All Profiles</a></li>
+          <li>
+            <a href="/user/<%= userProfile.username %>/profile">My Profile</a>
+          </li>
+          <li>
+            <a href="/user/<%= userProfile.username %>/update-profile"
+              >Update Profile</a
+            >
+          </li>
+          <li><a href="/logout">Log Out</a></li>
+        </ul>
+      </nav>
+    </header>
+  </body>
+</html>

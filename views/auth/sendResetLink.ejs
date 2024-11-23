@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/styles.css" />
+    <style>
+      input {
+        margin-top: 10px;
+      }
+    </style>
+    <title>Reset Password</title>
+  </head>
+  <body>
+    <form action="/auth/request-reset" method="POST" class="container">
+      <h2>Reset Password</h2>
+      <div class="form-group">
+        <label for="loginUsername"
+          >Please enter the email that you've registered with:</label
+        >
+        <input
+          type="email"
+          id="resetEmail"
+          name="email"
+          required
+          value="<%= email %>"
+        />
+      </div>
+
+      <div class="form-group">
+        <button id="loginButton">Send password reset link</button>
+      </div>
+      <p id="message"><%= message %></p>
+      <div class="toggle-link">
+        <a href="/auth/login">Back to Login</a>
+      </div>
+    </form>
+  </body>
+</html>
